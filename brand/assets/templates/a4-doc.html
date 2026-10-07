@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Documento A4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=block" rel="stylesheet">
+  <!-- Plantilla de marca Gragica · brand/applications/PRINT.md
+       Editá SOLO el bloque #piece. Render: node scripts/brand/render.mjs brand/assets/templates/a4-doc.html -->
+  <script type="application/json" id="piece">
+  {
+    "format": "a4",
+    "width": 794,
+    "height": 1123,
+    "level": 2,
+    "structure": "D",
+    "goal": "Portada de propuesta comercial",
+    "audience": "direccion",
+    "eyebrow": "Propuesta · Octubre 2026",
+    "headline": "Gragica para tu colegio.",
+    "remate": "tu colegio.",
+    "lead": "Proponemos implementar Gragica en dos etapas: primero calificaciones, asistencia y comunicados; después el sitio del colegio y Gragi.",
+    "section1_title": "Qué incluye",
+    "section1_body": "Calificaciones y boletines, asistencia con aviso a las familias, comunicados con acuse de lectura, horarios, app para familias y docentes.",
+    "section2_title": "Cómo cuidamos los datos",
+    "section2_body": "Una base de datos propia para el colegio, datos personales cifrados y consentimiento parental en el sistema (Ley 25.326).",
+    "contact": "contacto@gragica.com · gragica.com · Rosario, Argentina",
+    "background": "paper",
+    "note": "A4 a 96 dpi (794×1123 = 210×297 mm). Para imprenta: imprimir a PDF desde Chrome; márgenes 20 mm, sangrado 3 mm.",
+    "evidence": {
+      "type": "type-only"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      /* Tokens de marca (brand/tokens/semantic.tokens.json). Único lugar con valores de color. */
+      --brand-primary: #2F6F2A;
+      --brand-primary-on-dark: #5BAE66;
+      --brand-night: #0D1C0D;
+      --brand-on-night: #CAD8CA;
+      --brand-accent: #C98E18;
+      --brand-accent-on-night: #EAB448;
+      --surface-page: #FCFDFC;
+      --surface-raised: #FFFFFF;
+      --surface-sunken: #F3F7F2;
+      --border: #E0E7DF;
+      --text-primary: #1F2023;
+      --text-secondary: #4E5156;
+      --text-muted: #61656B;
+      --on-primary: #FFFFFF;
+      --on-night-strong: #FFFFFF;
+      --rule-on-night: rgb(255 255 255 / 0.14);
+      --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --font-sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --radius-card: 14px;
+      --radius-control: 10px;
+      --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: var(--w); height: var(--h); overflow: hidden; }
+    body { font-family: var(--font-sans); color: var(--text-primary); background: var(--surface-page);
+           -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+    body.night { background: var(--brand-night); color: var(--brand-on-night); }
+    body.sunken { background: var(--surface-sunken); }
+    .eyebrow { font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--brand-primary); }
+    .night .eyebrow { color: var(--brand-primary-on-dark); }
+    .headline { font-family: var(--font-serif); font-weight: 600; letter-spacing: -0.025em; line-height: 1.04; }
+    .headline .remate { color: var(--brand-primary); }
+    .night .headline { color: var(--on-night-strong); }
+    .night .headline .remate { color: var(--brand-primary-on-dark); }
+    .lead { color: var(--text-secondary); line-height: 1.45; }
+    .night .lead { color: var(--brand-on-night); }
+    .caption { color: var(--text-muted); line-height: 1.4; }
+    .night .caption { color: var(--brand-on-night); opacity: .8; }
+    .frame { background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius-card);
+             box-shadow: var(--shadow-card); overflow: hidden; }
+    .frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+    .cta { display: inline-flex; align-items: center; font-weight: 600; background: var(--brand-primary);
+           color: var(--on-primary); border-radius: var(--radius-control); }
+
+    /* --- composición de este formato --- */
+    /* 96 dpi: 1 mm ≈ 3,78 px; margen 20 mm ≈ 76 px */
+    body { background: var(--surface-raised); }
+    .page { position: absolute; inset: 76px; display: flex; flex-direction: column; }
+    .top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .logo { display: block; width: 129px; height: auto; } /* ≈ 130px */
+    .eyebrow { font-size: 11px; }
+    h1.headline { font-size: 44px; margin-top: 76px; }
+    .lead { font-size: 16px; margin-top: 18px; max-width: 560px; line-height: 1.55; }
+    .sec { margin-top: 40px; display: grid; grid-template-columns: 38px 1fr; column-gap: 6px; border-top: 1px solid var(--border); padding-top: 16px; }
+    .num { font-family: var(--font-serif); font-weight: 600; font-size: 22px; color: var(--brand-primary); }
+    .sec h2 { font-family: var(--font-serif); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
+    .sec p { grid-column: 2; font-size: 13.5px; line-height: 1.6; color: var(--text-secondary); margin-top: 6px; max-width: 560px; }
+    .foot { margin-top: auto; border-top: 1px solid var(--border); padding-top: 10px; font-size: 10.5px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top">
+      <img class="logo" data-logo src="../logos/gragica-lockup-h-ink-word.svg" alt="Gragica">
+      <span class="eyebrow" data-field="eyebrow">Propuesta · Octubre 2026</span>
+    </div>
+    <h1 class="headline"><span data-field="headline">Gragica para</span> <br data-field="headline_break"><span class="remate" data-field="remate">tu colegio.</span></h1>
+    <p class="lead" data-field="lead">Proponemos implementar Gragica en dos etapas: primero calificaciones, asistencia y comunicados; después el sitio del colegio y Gragi.</p>
+    <div class="sec"><span class="num">1.</span><h2 data-field="section1_title">Qué incluye</h2><p data-field="section1_body">Calificaciones y boletines, asistencia con aviso a las familias, comunicados con acuse de lectura, horarios, app para familias y docentes.</p></div>
+    <div class="sec"><span class="num">2.</span><h2 data-field="section2_title">Cómo cuidamos los datos</h2><p data-field="section2_body">Una base de datos propia para el colegio, datos personales cifrados y consentimiento parental en el sistema (Ley 25.326).</p></div>
+    <div class="foot" data-field="contact">contacto@gragica.com · gragica.com · Rosario, Argentina</div>
+  </div>
+
+  <script>
+    // Llena los [data-field] desde el bloque #piece. Editá solo el JSON de arriba.
+    (function () {
+      var p = JSON.parse(document.getElementById("piece").textContent);
+      document.documentElement.style.setProperty("--w", p.width + "px");
+      document.documentElement.style.setProperty("--h", p.height + "px");
+      if (p.background && p.background !== "paper") document.body.classList.add(p.background);
+      document.querySelectorAll("[data-field]").forEach(function (el) {
+        var k = el.getAttribute("data-field");
+        if (k === "headline_break") {
+          if (!p.headline_break) el.remove();
+        } else if (k === "screenshot") {
+          if (p.screenshot) el.src = p.screenshot; else el.closest(".frame").remove();
+        } else if (k === "headline") {
+          var h = p.headline || "", r = p.remate || "";
+          el.textContent = r && h.slice(-r.length) === r ? h.slice(0, -r.length).trim() : h;
+        } else if (p[k] !== undefined) {
+          if (p[k] === "" || p[k] === null) el.remove(); else el.textContent = p[k];
+        }
+      });
+      var night = document.body.classList.contains("night");
+      document.querySelectorAll("img[data-logo]").forEach(function (logo) {
+        var src = logo.getAttribute("src"), white = /-white\.svg$/.test(src);
+        if (night && !white) logo.setAttribute("src", src.replace(/(-ink-word|-ink)?\.svg$/, "-white.svg"));
+        if (!night && white) logo.setAttribute("src", src.replace(/-white\.svg$/, ".svg"));
+      });
+    })();
+  </script>
+</body>
+</html>

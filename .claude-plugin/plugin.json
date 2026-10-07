@@ -1,0 +1,8 @@
+{
+  "name": "gragica-style",
+  "version": "1.0.0",
+  "description": "Sistema de marca de Gragica: guía de voz, visual y aplicaciones, tokens, logos, plantillas y la skill gragica-brand para diseñar piezas on-brand con IA.",
+  "author": { "name": "Gragica" },
+  "repository": "https://github.com/joacox07/gragica-style",
+  "keywords": ["gragica", "brand", "design-system", "skill"]
+}

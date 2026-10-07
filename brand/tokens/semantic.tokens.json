@@ -1,0 +1,145 @@
+{
+  "$description": "Semánticos: para qué se usa cada color. Las piezas nuevas usan ESTOS nombres, no los primitivos.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "primary": {
+        "$value": "{color.green.700}",
+        "$description": "Color de marca: acción principal, remate tipográfico, eyebrow, isotipo."
+      },
+      "primary-strong": {
+        "$value": "{color.green.800}",
+        "$description": "Hover / presión del primario; verde sobre papel en tamaños grandes."
+      },
+      "on-primary": {
+        "$value": "{color.paper.000}",
+        "$description": "Texto e íconos sobre verde Gragica."
+      },
+      "night": {
+        "$value": "{color.green.950}",
+        "$description": "Fondo oscuro de marca (bandas, portadas, end cards)."
+      },
+      "on-night": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            120,
+            15,
+            82
+          ],
+          "hex": "#CAD8CA"
+        },
+        "$description": "Texto sobre verde noche.",
+        "$extensions": {
+          "com.gragica.source": {
+            "ts": "LANDING.ctaText"
+          }
+        }
+      },
+      "accent": {
+        "$value": "{color.gold.500}",
+        "$description": "Distinción. Máximo un acento dorado por pieza."
+      },
+      "accent-on-night": {
+        "$value": "{color.gold.300}",
+        "$description": "Dorado sobre verde noche."
+      }
+    },
+    "surface": {
+      "page": {
+        "$value": "{color.paper.050}",
+        "$description": "Fondo de página/pieza clara."
+      },
+      "raised": {
+        "$value": "{color.paper.000}",
+        "$description": "Tarjetas, marcos de captura, hojas A4."
+      },
+      "sunken": {
+        "$value": "{color.paper.100}",
+        "$description": "Zonas atenuadas, secciones alternas."
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.paper.200}",
+        "$description": "Filetes y bordes de 1px."
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.ink.900}",
+        "$description": "Texto principal y titulares."
+      },
+      "secondary": {
+        "$value": "{color.ink.700}",
+        "$description": "Bajadas y cuerpo secundario."
+      },
+      "muted": {
+        "$value": "{color.ink.600}",
+        "$description": "Pies, captions, metadatos."
+      }
+    },
+    "status": {
+      "success": {
+        "$value": "{color.emerald.600}",
+        "$description": "Aprobado / presente / hecho."
+      },
+      "success-text": {
+        "$value": "{color.emerald.700}",
+        "$description": "Éxito como texto."
+      },
+      "warning": {
+        "$value": "{color.amber.500}",
+        "$description": "En riesgo / pendiente."
+      },
+      "warning-text": {
+        "$value": "{color.amber.700}",
+        "$description": "Advertencia como texto."
+      },
+      "error": {
+        "$value": "{color.red.500}",
+        "$description": "Desaprobado / ausente / error."
+      },
+      "error-text": {
+        "$value": "{color.red.600}",
+        "$description": "Error como texto."
+      },
+      "info": {
+        "$value": "{color.teal.600}",
+        "$description": "Información neutra."
+      }
+    },
+    "ai": {
+      "from": {
+        "$value": "{color.graphite.800}",
+        "$description": "Degradado de superficie IA (inicio). Única excepción de degradado en producto."
+      },
+      "to": {
+        "$value": "{color.aiteal.600}",
+        "$description": "Degradado de superficie IA (fin)."
+      },
+      "text": {
+        "$value": "{color.aiteal.700}",
+        "$description": "Texto que nombra la IA."
+      }
+    },
+    "dark": {
+      "page": {
+        "$value": "{color.night.900}",
+        "$description": "Página en tema oscuro."
+      },
+      "surface": {
+        "$value": "{color.night.800}",
+        "$description": "Superficie en tema oscuro."
+      },
+      "text": {
+        "$value": "{color.night.100}",
+        "$description": "Texto principal en tema oscuro."
+      },
+      "primary": {
+        "$value": "{color.green.400}",
+        "$description": "Verde de marca en tema oscuro."
+      }
+    }
+  }
+}

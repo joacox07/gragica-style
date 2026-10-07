@@ -1,0 +1,16 @@
+{
+  "name": "gragica",
+  "owner": {
+    "name": "Gragica"
+  },
+  "metadata": {
+    "description": "Marketplace privado de Gragica: sistema de marca y skills de diseño."
+  },
+  "plugins": [
+    {
+      "name": "gragica-style",
+      "source": "./",
+      "description": "Sistema de marca de Gragica + skill gragica-brand para crear piezas on-brand."
+    }
+  ]
+}

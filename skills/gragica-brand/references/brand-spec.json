@@ -1,0 +1,1398 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-10-07",
+  "about": "Parámetros de marca de Gragica en datos. Los colores son referencias a brand/tokens/*.tokens.json (entre llaves: la ruta del token); los números de layout y tipo son canónicos y los docs de brand/ los citan. Validar con scripts/spec-check.mjs.",
+  "sources": {
+    "entry": "BRAND.md",
+    "tokens": [
+      "brand/tokens/primitive.tokens.json",
+      "brand/tokens/semantic.tokens.json"
+    ],
+    "docs": "brand/",
+    "logos": "brand/assets/logos/",
+    "templates": "brand/assets/templates/",
+    "render": "scripts/brand/render.mjs"
+  },
+  "core": [
+    "La G (brand/assets/logos/gragica-mark.svg) sin modificar",
+    "Un solo verde: {color.brand.primary}",
+    "Papel + tinta: {color.surface.page} / {color.text.primary}; oscuro: {color.brand.night}",
+    "Familia Source: Source Serif 4 (afirmar) + Source Sans 3 (todo lo demás)",
+    "El remate: titular serif con punto final y la última palabra/línea en verde",
+    "Evidencia: nada inventado (datos, testimonios, pantallas)",
+    "Voz: voseo, frases cortas, sin hype, sin emojis"
+  ],
+  "coreMinimumPresent": 4,
+  "levels": {
+    "1": {
+      "name": "Producto",
+      "where": [
+        "app web",
+        "app Tauri",
+        "emails transaccionales",
+        "notificaciones"
+      ],
+      "serif": "editorial-only",
+      "serifAllowedIn": [
+        "saludo del inicio",
+        "título de documento o comunicado"
+      ],
+      "remate": false,
+      "colorShare": {
+        "paper": 85,
+        "ink": 12,
+        "green": 3,
+        "gold": 0
+      },
+      "nightBackground": false,
+      "goldMaxPerPiece": 1,
+      "gragi": "assistant-ui-only",
+      "motion": "functional",
+      "minWhitespacePct": 15,
+      "maxDenseZones": null,
+      "notes": "El sistema de diseño de producto es packages/ui (+ /ds en dev). La skill no diseña pantallas de producto: remite ahí.",
+      "colorShareNote": "orientativo; verde y dorado son TOPES (más verde que esto es falla), papel es MÍNIMO"
+    },
+    "2": {
+      "name": "Institucional",
+      "where": [
+        "PDF",
+        "membrete",
+        "propuesta",
+        "informe",
+        "documentación",
+        "co-branding",
+        "firma de mail"
+      ],
+      "serif": "titles",
+      "remate": "optional-cover",
+      "colorShare": {
+        "paper": 80,
+        "ink": 15,
+        "green": 4,
+        "gold": 1
+      },
+      "nightBackground": "cover-only",
+      "goldMaxPerPiece": 1,
+      "gragi": "forbidden",
+      "motion": "none",
+      "minWhitespacePct": 25,
+      "maxDenseZones": 2,
+      "effectsForbidden": [
+        "gradient",
+        "backdrop-filter",
+        "large-shadow",
+        "glow"
+      ],
+      "colorShareNote": "orientativo; verde y dorado son TOPES (más verde que esto es falla), papel es MÍNIMO"
+    },
+    "3": {
+      "name": "Marketing",
+      "where": [
+        "gragica.com",
+        "redes",
+        "anuncios",
+        "presentaciones comerciales"
+      ],
+      "serif": "headlines",
+      "remate": "required",
+      "colorShare": {
+        "paper": 70,
+        "ink": 15,
+        "green": 12,
+        "gold": 3
+      },
+      "colorShareNight": {
+        "night": 75,
+        "onNight": 15,
+        "greenOnNight": 7,
+        "gold": 3
+      },
+      "nightBackground": "max-1-in-3-of-a-series",
+      "goldMaxPerPiece": 1,
+      "gragi": "only-if-piece-is-about-the-assistant",
+      "motion": "editorial",
+      "minWhitespacePct": 40,
+      "maxDenseZones": 1,
+      "effectsForbidden": [
+        "gradient",
+        "backdrop-filter",
+        "large-shadow",
+        "glow",
+        "perspective-mockup",
+        "blob"
+      ],
+      "colorShareNote": "orientativo; verde y dorado son TOPES (más verde que esto es falla), papel es MÍNIMO",
+      "nightCriterion": "noche para piezas de campaña, de seguridad o de cierre (end card), o para alternar en una serie; por defecto papel"
+    },
+    "4": {
+      "name": "Campaña",
+      "where": [
+        "lanzamientos",
+        "eventos",
+        "inicio de ciclo lectivo",
+        "piezas con nombre propio y fecha"
+      ],
+      "serif": "free",
+      "remate": "required",
+      "colorShare": "free-among-paper-ink-green-night-gold",
+      "nightBackground": "full-bleed-allowed",
+      "goldMaxPerPiece": 1,
+      "gragi": "allowed-as-character-unrecolored",
+      "motion": "expressive",
+      "minWhitespacePct": 30,
+      "maxDenseZones": 1,
+      "effectsForbidden": [
+        "gradient",
+        "backdrop-filter",
+        "glow",
+        "perspective-mockup",
+        "blob"
+      ],
+      "neverChanges": [
+        "logo",
+        "verde",
+        "familia tipográfica",
+        "voz",
+        "evidencia",
+        "pares de contraste prohibidos"
+      ]
+    }
+  },
+  "levelDecision": [
+    "¿Alguien lo usa para operar algo? → 1",
+    "¿Lo firma, archiva o imprime un colegio? → 2",
+    "¿Lo ve alguien que todavía no es cliente? → 3",
+    "¿Tiene nombre propio y fecha de inicio y fin? → 4",
+    "Si queda entre dos, el más bajo"
+  ],
+  "color": {
+    "brand": {
+      "primary": "{color.brand.primary}",
+      "primaryStrong": "{color.brand.primary-strong}",
+      "onPrimary": "{color.brand.on-primary}",
+      "night": "{color.brand.night}",
+      "onNight": "{color.brand.on-night}",
+      "primaryOnNight": "{color.dark.primary}",
+      "accent": "{color.brand.accent}",
+      "accentText": "{color.gold.700}",
+      "accentSoft": "{color.gold.100}",
+      "accentOnNight": "{color.brand.accent-on-night}"
+    },
+    "surface": {
+      "page": "{color.surface.page}",
+      "raised": "{color.surface.raised}",
+      "sunken": "{color.surface.sunken}",
+      "border": "{color.border.default}"
+    },
+    "text": {
+      "primary": "{color.text.primary}",
+      "secondary": "{color.text.secondary}",
+      "muted": "{color.text.muted}"
+    },
+    "status": {
+      "success": "{color.status.success}",
+      "successText": "{color.status.success-text}",
+      "successSoft": "{color.emerald.050}",
+      "warning": "{color.status.warning}",
+      "warningText": "{color.status.warning-text}",
+      "warningSoft": "{color.amber.050}",
+      "error": "{color.status.error}",
+      "errorText": "{color.status.error-text}",
+      "errorSoft": "{color.red.050}",
+      "info": "{color.status.info}",
+      "infoSoft": "{color.teal.050}"
+    },
+    "chart": [
+      "{color.chart.light.1}",
+      "{color.chart.light.2}",
+      "{color.chart.light.3}",
+      "{color.chart.light.4}",
+      "{color.chart.light.5}"
+    ],
+    "chartDark": [
+      "{color.chart.dark.1}",
+      "{color.chart.dark.2}",
+      "{color.chart.dark.3}",
+      "{color.chart.dark.4}",
+      "{color.chart.dark.5}"
+    ],
+    "exceptions": {
+      "gragiNeon": {
+        "value": "{color.gragi.neon}",
+        "rule": "solo dentro del render del robot; nunca texto, fondo, botón ni gráfico"
+      },
+      "gragiBody": {
+        "value": "{color.gragi.body}",
+        "rule": "idem"
+      },
+      "aiGradient": {
+        "from": "{color.ai.from}",
+        "to": "{color.ai.to}",
+        "rule": "único degradado permitido y solo en producto (nivel 1) para marcar acciones de IA"
+      },
+      "schoolColor": {
+        "rule": "el color del colegio se usa tal cual lo eligió (L 18–48 %, S ≥ 45 %); nunca se lo corrige hacia el verde. Declararlo en brief.schoolColor para que el lint lo acepte."
+      }
+    },
+    "legacyNeverUse": [
+      "#227C57",
+      "#1E7652",
+      "#2D7830",
+      "#2F7932",
+      "#306D29",
+      "#2E6B33",
+      "#15803D",
+      "#1A73E8",
+      "#2FA866",
+      "#1B8B50",
+      "#0B6336"
+    ],
+    "neutralsAllowedExtra": [
+      "#000000",
+      "#FFFFFF"
+    ],
+    "pairs": {
+      "allowed": [
+        {
+          "fg": "{color.text.primary}",
+          "bg": "{color.surface.page}",
+          "min": 4.5
+        },
+        {
+          "fg": "{color.text.secondary}",
+          "bg": "{color.surface.page}",
+          "min": 4.5
+        },
+        {
+          "fg": "{color.text.muted}",
+          "bg": "{color.surface.raised}",
+          "min": 4.5
+        },
+        {
+          "fg": "{color.brand.primary}",
+          "bg": "{color.surface.page}",
+          "min": 4.5
+        },
+        {
+          "fg": "{color.brand.on-primary}",
+          "bg": "{color.brand.primary}",
+          "min": 4.5
+        },
+        {
+          "fg": "{color.brand.on-night}",
+          "bg": "{color.brand.night}",
+          "min": 4.5
+        },
+        {
+          "fg": "{color.brand.accent-on-night}",
+          "bg": "{color.brand.night}",
+          "min": 4.5
+        },
+        {
+          "fg": "{color.dark.primary}",
+          "bg": "{color.brand.night}",
+          "min": 4.5
+        },
+        {
+          "fg": "{color.gold.700}",
+          "bg": "{color.surface.page}",
+          "min": 4.5
+        }
+      ],
+      "forbidden": [
+        {
+          "fg": "{color.brand.primary}",
+          "bg": "{color.brand.night}",
+          "use": "{color.dark.primary}"
+        },
+        {
+          "fg": "{color.brand.accent}",
+          "bg": "{color.surface.page}",
+          "use": "{color.gold.700}",
+          "note": "el dorado 500 sobre claro solo decorativo"
+        },
+        {
+          "fg": "{color.gragi.neon}",
+          "bg": "{color.surface.page}",
+          "use": null
+        },
+        {
+          "fg": "{color.status.warning}",
+          "bg": "{color.surface.raised}",
+          "use": "{color.status.warning-text}"
+        }
+      ],
+      "note": "lista no exhaustiva: cualquier texto necesita ≥ 4,5:1 contra su fondo (≥ 3:1 si mide ≥ 24px o es bold ≥ 19px). Los prohibidos están prohibidos aunque el tamaño alcance."
+    },
+    "combinationRules": [
+      "Verde y dorado nunca adyacentes en el mismo bloque ni en series de gráfico contiguas",
+      "Máximo un acento dorado por pieza",
+      "Verde + rojo solo como semáforo de datos",
+      "Azul no es color de Gragica: solo aparece si es del colegio o de materias en capturas del producto",
+      "Sobre el color del colegio, el logo de Gragica va en blanco o en una banda papel; nunca verde"
+    ],
+    "toleranceRgb": 3
+  },
+  "type": {
+    "families": {
+      "serif": {
+        "name": "Source Serif 4",
+        "stack": "'Source Serif 4', Georgia, 'Times New Roman', serif",
+        "weights": [
+          600,
+          700
+        ],
+        "googleFonts": "https://fonts.google.com/specimen/Source+Serif+4"
+      },
+      "sans": {
+        "name": "Source Sans 3",
+        "stack": "'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+        "weights": [
+          400,
+          500,
+          600,
+          700
+        ],
+        "googleFonts": "https://fonts.google.com/specimen/Source+Sans+3"
+      },
+      "mono": {
+        "name": "ui-monospace",
+        "stack": "ui-monospace, 'SF Mono', Menlo, monospace",
+        "use": "solo código o IDs técnicos"
+      }
+    },
+    "allowedFamilies": [
+      "Source Serif 4",
+      "Source Sans 3",
+      "ui-monospace",
+      "SF Mono",
+      "Menlo",
+      "monospace",
+      "Georgia",
+      "Times New Roman",
+      "serif",
+      "system-ui",
+      "-apple-system",
+      "Segoe UI",
+      "Roboto",
+      "sans-serif",
+      "Helvetica",
+      "Arial",
+      "inherit"
+    ],
+    "googleFontsCss": "https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap",
+    "roles": {
+      "display": {
+        "family": "serif",
+        "weight": 600,
+        "lineHeight": 1.04,
+        "tracking": "-0.025em",
+        "case": "sentence",
+        "endsWith": ".",
+        "use": "el remate / titular principal"
+      },
+      "heading": {
+        "family": "serif",
+        "weight": 600,
+        "lineHeight": 1.08,
+        "tracking": "-0.02em",
+        "case": "sentence",
+        "use": "título de sección o slide"
+      },
+      "lead": {
+        "family": "sans",
+        "weight": 400,
+        "lineHeight": 1.45,
+        "tracking": "0",
+        "maxCh": 56,
+        "color": "{color.text.secondary}",
+        "use": "bajada"
+      },
+      "body": {
+        "family": "sans",
+        "weight": 400,
+        "lineHeight": 1.5,
+        "tracking": "-0.005em",
+        "maxCh": 66,
+        "use": "texto corrido"
+      },
+      "eyebrow": {
+        "family": "sans",
+        "weight": 500,
+        "lineHeight": 1.2,
+        "tracking": "0.14em",
+        "case": "uppercase",
+        "color": "{color.brand.primary}",
+        "maxWords": 4,
+        "use": "rótulo sobre el titular"
+      },
+      "label": {
+        "family": "sans",
+        "weight": 500,
+        "lineHeight": 1.35,
+        "tracking": "0",
+        "use": "rótulos, metadatos"
+      },
+      "caption": {
+        "family": "sans",
+        "weight": 400,
+        "lineHeight": 1.45,
+        "tracking": "0",
+        "color": "{color.text.muted}",
+        "use": "pie de captura, fuente de un dato"
+      },
+      "figure": {
+        "family": "serif",
+        "weight": 600,
+        "lineHeight": 1.0,
+        "tracking": "-0.03em",
+        "numeric": "tabular-nums lining-nums",
+        "use": "cifra protagonista"
+      },
+      "cta": {
+        "family": "sans",
+        "weight": 600,
+        "lineHeight": 1.1,
+        "tracking": "0",
+        "use": "botón o llamado"
+      },
+      "numeral": {
+        "family": "serif",
+        "weight": 600,
+        "lineHeight": 1.0,
+        "tracking": "0",
+        "numeric": "lining-nums",
+        "use": "numeración de secciones o ítems (1. 2. 3.), índice de slides"
+      }
+    },
+    "serifForbiddenIn": [
+      "button",
+      "input",
+      "select",
+      "textarea",
+      "table",
+      "th",
+      "td",
+      "nav",
+      "label"
+    ],
+    "remate": {
+      "rule": "El titular termina con punto. La última palabra o la última línea va en {color.brand.primary} (en fondo oscuro, {color.dark.primary}). Solo una zona en verde por titular.",
+      "markup": "<h1 class=\"display\">La gestión de tu colegio, <em class=\"remate\">entera.</em></h1>",
+      "cssClass": "remate"
+    },
+    "productScaleRem": {
+      "display": 1.75,
+      "title": 1.5,
+      "heading": 1.125,
+      "subheading": 1,
+      "body": 0.9375,
+      "label": 0.8125,
+      "caption": 0.75
+    },
+    "webMarketingClamp": {
+      "hero": "clamp(2.5rem, 1.2rem + 5.6vw, 5rem)",
+      "section": "clamp(2rem, 1.35rem + 2.8vw, 3.25rem)",
+      "lead": "clamp(1.0625rem, 1rem + 0.4vw, 1.25rem)",
+      "eyebrow": "12px",
+      "caption": "13px"
+    }
+  },
+  "formats": {
+    "ad-4x5": {
+      "label": "Anuncio / post vertical 4:5 (Meta, Instagram feed, LinkedIn)",
+      "width": 1080,
+      "height": 1350,
+      "margin": {
+        "x": 88,
+        "top": 96,
+        "bottom": 88
+      },
+      "safe": {
+        "top": 96,
+        "bottom": 88,
+        "x": 88
+      },
+      "columns": 6,
+      "gutter": 24,
+      "type": {
+        "display": [
+          96,
+          128
+        ],
+        "heading": [
+          64,
+          80
+        ],
+        "lead": [
+          34,
+          40
+        ],
+        "eyebrow": 22,
+        "caption": 20,
+        "figure": [
+          200,
+          320
+        ],
+        "cta": 30
+      },
+      "logo": {
+        "version": "lockup-h",
+        "widthPx": [
+          200,
+          240
+        ],
+        "position": [
+          "bottom-left",
+          "top-left"
+        ]
+      },
+      "maxWordsHeadline": 8,
+      "maxWordsLead": 24,
+      "nightCta": "sobre noche, el CTA va con fondo {color.dark.primary} y texto {color.brand.night}"
+    },
+    "post-1x1": {
+      "label": "Post cuadrado 1:1",
+      "width": 1080,
+      "height": 1080,
+      "margin": {
+        "x": 80,
+        "top": 80,
+        "bottom": 80
+      },
+      "safe": {
+        "top": 80,
+        "bottom": 80,
+        "x": 80
+      },
+      "columns": 6,
+      "gutter": 24,
+      "type": {
+        "display": [
+          88,
+          112
+        ],
+        "heading": [
+          56,
+          72
+        ],
+        "lead": [
+          32,
+          36
+        ],
+        "eyebrow": 22,
+        "caption": 20,
+        "figure": [
+          180,
+          280
+        ],
+        "cta": 28
+      },
+      "logo": {
+        "version": "lockup-h",
+        "widthPx": [
+          180,
+          220
+        ],
+        "position": [
+          "bottom-left",
+          "top-left"
+        ]
+      },
+      "maxWordsHeadline": 7,
+      "maxWordsLead": 20
+    },
+    "story-9x16": {
+      "label": "Story / Reel / TikTok 9:16",
+      "width": 1080,
+      "height": 1920,
+      "margin": {
+        "x": 72,
+        "top": 250,
+        "bottom": 340
+      },
+      "safe": {
+        "top": 250,
+        "bottom": 340,
+        "x": 72,
+        "note": "Instagram tapa ~250px arriba (perfil, barra) y ~340px abajo (respuesta, CTA del anuncio)"
+      },
+      "columns": 4,
+      "gutter": 24,
+      "type": {
+        "display": [
+          104,
+          140
+        ],
+        "heading": [
+          72,
+          88
+        ],
+        "lead": [
+          38,
+          44
+        ],
+        "eyebrow": 24,
+        "caption": 22,
+        "figure": [
+          240,
+          360
+        ],
+        "cta": 34
+      },
+      "logo": {
+        "version": "lockup-h",
+        "widthPx": [
+          220,
+          260
+        ],
+        "position": [
+          "top-left-inside-safe"
+        ]
+      },
+      "maxWordsHeadline": 8,
+      "maxWordsLead": 20
+    },
+    "carousel-4x5": {
+      "label": "Carrusel 4:5 (cada lámina)",
+      "width": 1080,
+      "height": 1350,
+      "margin": {
+        "x": 88,
+        "top": 96,
+        "bottom": 88
+      },
+      "safe": {
+        "top": 96,
+        "bottom": 88,
+        "x": 88
+      },
+      "columns": 6,
+      "gutter": 24,
+      "type": {
+        "display": [
+          88,
+          120
+        ],
+        "heading": [
+          60,
+          76
+        ],
+        "lead": [
+          32,
+          38
+        ],
+        "eyebrow": 22,
+        "caption": 20,
+        "figure": [
+          200,
+          300
+        ],
+        "cta": 30
+      },
+      "logo": {
+        "version": "mark",
+        "widthPx": [
+          56,
+          64
+        ],
+        "position": [
+          "bottom-right"
+        ],
+        "firstSlide": "lockup-h",
+        "lastSlide": "lockup-h"
+      },
+      "slides": [
+        3,
+        8
+      ],
+      "pagination": "caption abajo a la izquierda: «1/6»",
+      "maxWordsHeadline": 8,
+      "maxWordsLead": 30
+    },
+    "slide-16x9": {
+      "label": "Presentación 16:9",
+      "width": 1920,
+      "height": 1080,
+      "margin": {
+        "x": 120,
+        "top": 96,
+        "bottom": 96
+      },
+      "safe": {
+        "top": 96,
+        "bottom": 96,
+        "x": 120
+      },
+      "columns": 12,
+      "gutter": 32,
+      "type": {
+        "display": [
+          96,
+          140
+        ],
+        "heading": [
+          64,
+          88
+        ],
+        "lead": [
+          36,
+          44
+        ],
+        "body": [
+          30,
+          36
+        ],
+        "eyebrow": 22,
+        "caption": 22,
+        "figure": [
+          200,
+          320
+        ],
+        "minBody": 28
+      },
+      "logo": {
+        "version": "mark",
+        "widthPx": [
+          40,
+          48
+        ],
+        "position": [
+          "bottom-left"
+        ],
+        "cover": "lockup-h 320px"
+      },
+      "maxWordsHeadline": 6,
+      "maxBulletsPerSlide": 4
+    },
+    "og-1200x630": {
+      "label": "Imagen para compartir links (Open Graph / Twitter)",
+      "width": 1200,
+      "height": 630,
+      "margin": {
+        "x": 72,
+        "top": 64,
+        "bottom": 64
+      },
+      "safe": {
+        "top": 64,
+        "bottom": 64,
+        "x": 72
+      },
+      "columns": 6,
+      "gutter": 24,
+      "type": {
+        "display": [
+          72,
+          92
+        ],
+        "eyebrow": 20,
+        "caption": 20
+      },
+      "logo": {
+        "version": "lockup-h",
+        "widthPx": [
+          200,
+          220
+        ],
+        "position": [
+          "top-left"
+        ]
+      },
+      "maxWordsHeadline": 7
+    },
+    "a4": {
+      "label": "Documento A4 (PDF, propuesta, informe, membrete)",
+      "width": 794,
+      "height": 1123,
+      "unitNote": "px a 96 dpi = 210 × 297 mm",
+      "margin": {
+        "x": 76,
+        "top": 76,
+        "bottom": 76,
+        "mm": 20
+      },
+      "safe": {
+        "top": 76,
+        "bottom": 76,
+        "x": 76
+      },
+      "print": {
+        "bleedMm": 3,
+        "dpi": 300,
+        "safeMm": 5
+      },
+      "columns": 6,
+      "gutter": 16,
+      "type": {
+        "display": [
+          36,
+          44
+        ],
+        "heading": [
+          22,
+          26
+        ],
+        "body": [
+          13,
+          14
+        ],
+        "caption": [
+          10,
+          11
+        ],
+        "pt": {
+          "display": 28,
+          "heading": 16,
+          "body": 10.5,
+          "caption": 8
+        }
+      },
+      "logo": {
+        "version": "lockup-h-ink-word",
+        "widthPx": [
+          120,
+          140
+        ],
+        "position": [
+          "top-left"
+        ]
+      },
+      "maxWordsHeadline": 10
+    },
+    "email-header": {
+      "label": "Encabezado de email comercial de Gragica",
+      "width": 600,
+      "height": 200,
+      "margin": {
+        "x": 32,
+        "top": 32,
+        "bottom": 32
+      },
+      "safe": {
+        "top": 32,
+        "bottom": 32,
+        "x": 32
+      },
+      "type": {
+        "display": [
+          36,
+          44
+        ],
+        "eyebrow": 13
+      },
+      "logo": {
+        "version": "lockup-h",
+        "widthPx": [
+          120,
+          140
+        ],
+        "position": [
+          "top-left"
+        ]
+      },
+      "maxWordsHeadline": 7,
+      "note": "Los emails transaccionales son nivel 1 y los firma el colegio (back/email_templates). Esto es solo para mails comerciales de Gragica."
+    },
+    "reel-9x16": {
+      "label": "Reel / TikTok 9:16 con UI lateral (likes, comentarios a la derecha)",
+      "width": 1080,
+      "height": 1920,
+      "margin": {
+        "x": 72,
+        "top": 220,
+        "bottom": 420
+      },
+      "safe": {
+        "top": 220,
+        "bottom": 420,
+        "x": 72,
+        "right": 160,
+        "note": "la columna derecha de botones tapa ~160px; el pie del reel tapa ~420px"
+      },
+      "columns": 4,
+      "gutter": 24,
+      "type": {
+        "display": [
+          96,
+          128
+        ],
+        "heading": [
+          72,
+          88
+        ],
+        "lead": [
+          38,
+          44
+        ],
+        "eyebrow": 24,
+        "caption": 22,
+        "figure": [
+          240,
+          360
+        ],
+        "cta": 34
+      },
+      "logo": {
+        "version": "lockup-h",
+        "widthPx": [
+          220,
+          260
+        ],
+        "position": [
+          "top-left-inside-safe"
+        ]
+      },
+      "maxWordsHeadline": 8,
+      "maxWordsLead": 20,
+      "source": "brand/visual/LAYOUT.md"
+    }
+  },
+  "layout": {
+    "alignment": "izquierda por defecto; centrado solo en end cards, portadas verticales y piezas de una sola palabra",
+    "maxTextColumnsPerPiece": 1,
+    "headlinePlacement": "según la estructura (structures.*.headlinePlacement); nunca centrado vertical exacto salvo campaña o end card",
+    "screenshotRule": "captura real dentro del marco: radio {dimension.radius.lg}, borde 1px {color.border.default}, sombra máx. 0 1px 2px rgba(0,0,0,.04); sin barra de navegador falsa; sin perspectiva ni rotación",
+    "screenshotCaption": "Captura real · datos ficticios",
+    "rules": "filetes de 1px {color.border.default}; en piezas oscuras rgba(255,255,255,.14)",
+    "radius": {
+      "frame": "{dimension.radius.lg}",
+      "button": "{dimension.radius.md}",
+      "chip": "{dimension.radius.sm}"
+    },
+    "maxCardsPerPiece": 3,
+    "assetsPerPiece": {
+      "range": [
+        1,
+        3
+      ],
+      "note": "activos distintivos visibles por pieza (remate, evidencia, marco, documento escolar, dato, Gragi): entre 1 y 3; más es ruido",
+      "source": "brand/visual/DISTINCTIVE_ASSETS.md"
+    },
+    "maxCardsInRow": 2,
+    "whitespaceMeasure": "porcentaje del lienzo que no ocupan cajas de texto, imágenes ni marcos (se mide por cajas, no por píxeles con tinta); el interlineado dentro de un bloque cuenta como ocupado",
+    "screenshotShare": [
+      0.35,
+      0.65
+    ],
+    "listAsLead": "una bajada puede ser una lista de 2–3 renglones con filetes (fragmentos sin punto final); cuenta como bajada y respeta maxWordsLead en total"
+  },
+  "logo": {
+    "files": {
+      "lockup-h": "brand/assets/logos/gragica-lockup-h.svg",
+      "lockup-h-white": "brand/assets/logos/gragica-lockup-h-white.svg",
+      "lockup-h-ink": "brand/assets/logos/gragica-lockup-h-ink.svg",
+      "lockup-h-ink-word": "brand/assets/logos/gragica-lockup-h-ink-word.svg",
+      "lockup-v": "brand/assets/logos/gragica-lockup-v.svg",
+      "lockup-v-white": "brand/assets/logos/gragica-lockup-v-white.svg",
+      "mark": "brand/assets/logos/gragica-mark.svg",
+      "mark-white": "brand/assets/logos/gragica-mark-white.svg",
+      "mark-ink": "brand/assets/logos/gragica-mark-ink.svg",
+      "wordmark": "brand/assets/logos/gragica-wordmark.svg",
+      "app-icon": "brand/assets/logos/gragica-app-icon.svg"
+    },
+    "byBackground": {
+      "paper": "lockup-h",
+      "white": "lockup-h",
+      "green": "lockup-h-white",
+      "night": "lockup-h-white",
+      "photo-dark-calm-area": "lockup-h-white",
+      "school-color": "lockup-h-white (si contraste ≥ 3:1) o lockup-h sobre banda papel",
+      "one-ink": "lockup-h-ink"
+    },
+    "lockupAspect": 4.03,
+    "unit": "u = altura de mayúscula del wordmark",
+    "markHeightU": 1.42,
+    "gapU": 0.42,
+    "clearspace": {
+      "lockup": "1u por lado",
+      "mark": "25% de su alto por lado",
+      "cobrandingSide": "2u"
+    },
+    "minimum": {
+      "lockup-h": {
+        "px": 100,
+        "mm": 25
+      },
+      "lockup-v": {
+        "px": 64,
+        "mm": 16
+      },
+      "mark": {
+        "px": 16,
+        "mm": 5
+      },
+      "wordmark": {
+        "px": 72,
+        "mm": 18
+      }
+    },
+    "legacyFilesNeverUse": [
+      "logo-gragica.png",
+      "logo-gragica-mark.png",
+      "icon-512x512.png",
+      "icon.jpg"
+    ],
+    "forbidden": [
+      "recolorear",
+      "degradado",
+      "estirar",
+      "rotar",
+      "contorno",
+      "sombra",
+      "brillo",
+      "3D",
+      "reescribir el nombre con otra fuente",
+      "cambiar proporción G/palabra",
+      "G dentro de forma (salvo app icon)",
+      "PNG viejos de front/public/images"
+    ]
+  },
+  "copy": {
+    "language": "es-AR",
+    "address": "voseo",
+    "headline": {
+      "maxWords": 8,
+      "endsWith": ".",
+      "noExclamation": true,
+      "noEllipsis": true,
+      "talksAbout": "el colegio o la persona, no Gragica",
+      "remateRequiredLevels": [
+        3,
+        4
+      ]
+    },
+    "lead": {
+      "maxWords": 30,
+      "sentences": [
+        1,
+        2
+      ]
+    },
+    "cta": {
+      "maxWordsButton": 3,
+      "maxWordsAd": 5,
+      "form": "botones: infinitivo (Pedir una demo, Ver el producto); texto corrido: voseo (Escribinos, Contanos cómo trabaja tu colegio)",
+      "approved": [
+        "Pedir una demo",
+        "Ver el producto",
+        "Escribinos",
+        "Escribinos por WhatsApp",
+        "Contanos cómo trabaja tu colegio",
+        "Ingresar"
+      ],
+      "forbidden": [
+        "Click aquí",
+        "Hacé click",
+        "Saber más",
+        "Descubrí",
+        "Empezá ahora",
+        "Probalo gratis",
+        "Comprá ya"
+      ]
+    },
+    "emoji": 0,
+    "maxExclamationsPerPiece": 1,
+    "case": "sentence",
+    "quotes": "«»",
+    "ellipsis": "…",
+    "interpunct": "·",
+    "formats": {
+      "course": "5° B",
+      "date": "8 de septiembre",
+      "time": "14:30",
+      "percent": "87%",
+      "decimal": "7,6",
+      "thousands": "1.200"
+    },
+    "forbiddenWords": [
+      "revolucion",
+      "transformar la educación",
+      "transformamos la educación",
+      "disruptiv",
+      "potente",
+      "robust",
+      "de vanguardia",
+      "next-gen",
+      "impulsado por ia",
+      "ai-powered",
+      "powered by ai",
+      "soluciones",
+      "insights",
+      "seamless",
+      "todo en uno",
+      "all-in-one",
+      "el futuro de",
+      "increíble",
+      "sin precedentes",
+      "nivel bancario",
+      "100% segur",
+      "inhackeable",
+      "la mejor plataforma",
+      "líder del mercado"
+    ],
+    "tuteoPatterns": [
+      "\\bpuedes\\b",
+      "\\btienes\\b",
+      "\\bquieres\\b",
+      "\\bnecesitas\\b",
+      "\\bsabes\\b",
+      "\\bcontáctanos\\b",
+      "\\bescríbenos\\b",
+      "\\bdescúbre\\w*",
+      "\\bpruébalo\\b",
+      "(?:^|[.!?]\\s+)[¡¿]?(?:Selecciona|Elige|Escribe|Toca|Descubre|Ingresa|Prueba|Haz)\\b",
+      "\\b(?:selecciona|elige|ingresa|escribe|toca|descubre)\\s+(?:tu|tus|aquí|acá)\\b"
+    ],
+    "ustedPatterns": [
+      "\\busted\\b",
+      "\\bingrese\\b",
+      "\\bseleccione\\b",
+      "\\bcontáctenos\\b"
+    ],
+    "vocabulary": {
+      "alumno": [
+        "estudiante",
+        "educando"
+      ],
+      "familia": [
+        "padres (como genérico)",
+        "apoderado"
+      ],
+      "docente": [
+        "profesor (en UI)"
+      ],
+      "colegio": [
+        "escuela",
+        "institución",
+        "establecimiento"
+      ],
+      "curso": [
+        "grado",
+        "división (suelto)"
+      ],
+      "ciclo lectivo": [
+        "año lectivo",
+        "año escolar"
+      ],
+      "Gragica": [
+        "GRAGICA",
+        "gragica (en texto)"
+      ]
+    },
+    "tuteoNote": "solo se marca el imperativo en tú (inicio de frase o seguido de «tu/aquí»); «la bibliotecaria elige» es tercera persona y está bien"
+  },
+  "evidence": {
+    "valid": [
+      {
+        "type": "real-screenshot",
+        "rule": "captura real del producto (brand/assets/screenshots/*.webp o capturada con scripts/capture-landing-shots.mjs en el repo gragica) + pie de datos ficticios"
+      },
+      {
+        "type": "sourced-figure",
+        "rule": "cifra con fuente verificable en caption (repo, colegio con permiso, estudio citado)"
+      },
+      {
+        "type": "real-quote",
+        "rule": "cita real con nombre, cargo, colegio y permiso escrito"
+      },
+      {
+        "type": "type-only",
+        "rule": "pieza tipográfica: el remate solo, sin evidencia visual"
+      },
+      {
+        "type": "school-real",
+        "rule": "Colegio Stella Maris, Fisherton (único caso real a 2026-10), con su escudo intacto"
+      }
+    ],
+    "forbidden": [
+      "testimonio inventado",
+      "cifra de uptime/velocidad/usuarios inventada",
+      "logo de colegio que no es cliente",
+      "pantalla de producto generada por IA o maquetada",
+      "rostro identificable de un menor sin consentimiento",
+      "comparación con competidor con nombre"
+    ],
+    "whenMissing": "preguntar al usuario; si no hay dato, hacer la pieza tipográfica"
+  },
+  "imagery": {
+    "photography": "inactiva hasta que haya sesión real (ver brand/visual/PHOTOGRAPHY.md); mientras tanto, piezas tipográficas + capturas reales",
+    "aiImagery": {
+      "allowed": [
+        "espacios de colegio sin gente (aula con luz de mañana, pasillo, patio, biblioteca)",
+        "objetos sobre una mesa (cuaderno de comunicados, carpeta, boletín en blanco, lapicera)",
+        "texturas sutiles de papel o cartulina",
+        "como máximo, manos o siluetas lejanas de ADULTOS sin rostro"
+      ],
+      "forbidden": [
+        "rostros generados o personas presentadas como reales",
+        "menores, en cualquier forma",
+        "pantallas, interfaces o dispositivos con pantalla (ni siquiera vacía o chroma): el producto se muestra solo con capturas reales en el marco",
+        "texto dentro de la imagen",
+        "logos o escudos generados",
+        "estilo 3D brillante salvo el render oficial de Gragi"
+      ],
+      "source": "brand/ai/GENERATIVE_AI.md"
+    },
+    "illustration": "no hay ilustración de marca; solo diagramas con la paleta y filetes",
+    "icons": {
+      "library": "lucide",
+      "stroke": 2,
+      "sizes": [
+        16,
+        20,
+        24
+      ],
+      "marketingSizes": [
+        32,
+        48
+      ],
+      "color": "{color.text.primary} o {color.brand.primary}",
+      "filled": false
+    }
+  },
+  "gragi": {
+    "files": [
+      "brand/assets/gragi/gragi.webp",
+      "brand/assets/gragi/gragi-head.webp"
+    ],
+    "rules": [
+      "usar el render tal cual",
+      "no recolorear ni redibujar",
+      "no en piezas de nivel 2",
+      "en nivel 3 solo si la pieza habla del asistente",
+      "fondo papel o verde noche, nunca sobre fotos",
+      "máximo 40% del alto de la pieza",
+      "nunca habla en nombre de Gragica en institucional",
+      "Gragi es para el personal del colegio: no prometerlo a alumnos ni familias"
+    ]
+  },
+  "motion": {
+    "durationsMs": {
+      "fast": 120,
+      "base": 180,
+      "slow": 260
+    },
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "principles": [
+      "el movimiento muestra causa y efecto, no decora",
+      "una curva para todo",
+      "sin rebotes, sin parallax, sin blur de movimiento"
+    ],
+    "editorial": {
+      "risingLines": "cada línea del titular sube 0.4em desde su caja de recorte, 260ms, stagger 80ms",
+      "screenshotCrossfade": "260ms",
+      "liftMaxPx": 48
+    },
+    "video": {
+      "cutsPerSecondMax": 1,
+      "holdHeadlineMinS": 1.5,
+      "endCardS": [
+        2,
+        3
+      ],
+      "logoAnimation": "la G aparece por su trazo (máscara) en 600ms y la palabra sube 260ms después; nada de giros"
+    }
+  },
+  "dataviz": {
+    "seriesOrder": "fijo, sin ciclar; desde la sexta categoría se agrupa en «Otros»",
+    "semaforo": {
+      "aprobado": "{color.status.success-text}",
+      "enRiesgo": "{color.status.warning-text}",
+      "desaprobado": "{color.status.error-text}"
+    },
+    "rules": [
+      "siempre el número además del color",
+      "ejes y grilla en rgba(17,20,19,.08)",
+      "sin 3D, sin sombras",
+      "donut solo para una proporción, nunca más de 3 partes",
+      "resaltar una serie: el resto en {color.border.default}"
+    ]
+  },
+  "deliverable": {
+    "files": [
+      "brief.json (validado contra piece-brief.schema.json)",
+      "pieza.html",
+      "pieza.png (render exacto)",
+      "rubric: puntaje y fallas"
+    ],
+    "naming": "AAAA-MM-DD_formato_slug (ej. 2026-10-07_ad-4x5_biblioteca)"
+  },
+  "structures": {
+    "source": "brand/visual/LAYOUT.md § Estructuras base",
+    "A": {
+      "name": "Afirmación",
+      "scheme": "eyebrow arriba, titular grande en el tercio medio, logo abajo",
+      "for": [
+        "awareness",
+        "lanzamiento",
+        "cita",
+        "feature sin captura"
+      ],
+      "evidence": [
+        "type-only",
+        "real-quote"
+      ],
+      "headlinePlacement": "tercio medio"
+    },
+    "B": {
+      "name": "Afirmación + evidencia",
+      "scheme": "titular arriba (≈40 % del alto), captura en marco abajo, sangrando por el borde inferior o derecho",
+      "for": [
+        "feature",
+        "producto",
+        "demo"
+      ],
+      "evidence": [
+        "real-screenshot"
+      ],
+      "headlinePlacement": "40 % superior",
+      "screenshotShare": [
+        0.35,
+        0.65
+      ]
+    },
+    "C": {
+      "name": "Dato",
+      "scheme": "cifra enorme (role figure), una línea que la explica, fuente al pie",
+      "for": [
+        "dato",
+        "seguridad",
+        "caso"
+      ],
+      "evidence": [
+        "sourced-figure",
+        "school-real"
+      ],
+      "headlinePlacement": "cifra en tercio superior o medio; titular debajo"
+    },
+    "D": {
+      "name": "Documento",
+      "scheme": "membrete, título serif, cuerpo en columnas con filetes",
+      "for": [
+        "institucional",
+        "propuesta",
+        "informe",
+        "documento"
+      ],
+      "evidence": [
+        "any"
+      ],
+      "headlinePlacement": "debajo del membrete"
+    },
+    "variantsInFormatsMd": {
+      "Remate solo": "A",
+      "Remate + captura": "B",
+      "Dato": "C",
+      "Detalle": "B (captura recortada a 2–3×)",
+      "Cita": "A con real-quote",
+      "Documento": "D"
+    }
+  },
+  "verify": {
+    "featureClaims": "antes de afirmar qué hace una función, verificalo en packages/app/src/screens/<función>/ y en la ayuda packages/app/src/help/catalog/ (lo que la ayuda explica, existe)",
+    "newScreenshots": "capturas nuevas: node scripts/capture-landing-shots.mjs (necesita playwright, el stack levantado y el tenant demo sembrado). NUNCA capturar el tenant stellamaris: sirve datos reales de menores. Si no se puede capturar, pedile la captura al usuario o hacé la pieza tipográfica.",
+    "fonts": "las plantillas cargan Source Serif 4 / Source Sans 3 desde assets/fonts (local, OFL) y Google Fonts como respaldo; sin ellas el render cae en Georgia y la pieza no vale"
+  }
+}

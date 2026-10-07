@@ -1,0 +1,5 @@
+node_modules/
+brand/dist/
+*.tmp
+.DS_Store
+__pycache__/

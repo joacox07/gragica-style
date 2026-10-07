@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>Las notas, sin Excel. — anuncio 4:5</title>
+<script type="application/json" id="piece">
+{
+  "format": "ad-4x5", "width": 1080, "height": 1350, "level": 3, "type": "feature",
+  "goal": "que directores de colegios privados de Santa Fe pidan una demo",
+  "audience": "direccion",
+  "eyebrow": "Calificaciones",
+  "headline": "Las notas, sin Excel.",
+  "remate": "sin Excel.",
+  "lead": "Los docentes cargan en la misma pantalla donde ven el curso, y el boletín sale de ahí.",
+  "cta": "Pedir una demo",
+  "evidence": { "type": "real-screenshot", "asset": "brand/assets/screenshots/calificaciones.webp", "caption": "Captura real · datos ficticios" },
+  "background": "paper",
+  "tool": "html"
+}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<style>
+  /* Fuentes locales (OFL, assets/fonts) primero; Google Fonts queda de respaldo. */
+  @font-face { font-family: 'Source Serif 4'; src: url('../fonts/SourceSerif4-VF.ttf') format('truetype'); font-weight: 200 900; font-display: block; }
+  @font-face { font-family: 'Source Sans 3'; src: url('../fonts/SourceSans3-VF.ttf') format('truetype'); font-weight: 200 900; font-display: block; }
+  /* Rutas relativas a la ubicación de la skill: <repo>/skills/gragica-brand/assets/examples/ */
+  :root {
+    --page: #FCFDFC; --raised: #FFFFFF; --border: #E0E7DF;
+    --ink: #1F2023; --ink-2: #4E5156; --ink-3: #61656B;
+    --green: #2F6F2A;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Source Sans 3', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1080px; height: 1350px; }
+  body { background: var(--page); color: var(--ink); font-family: var(--sans); position: relative; overflow: hidden; }
+
+  .copy { position: absolute; left: 88px; top: 96px; width: 820px; }
+  .eyebrow { font: 500 22px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+  .display { margin-top: 28px; font-family: var(--serif); font-weight: 600; font-size: 120px; line-height: 1.04; letter-spacing: -0.025em; }
+  .remate { font-style: normal; color: #2F6F2A; display: block; }
+  .lead { margin-top: 32px; max-width: 720px; font-size: 36px; line-height: 1.4; color: var(--ink-2); }
+
+  /* El marco: captura real, borde de 1px, radio lg, sin sombra; sangra a la derecha */
+  .frame { position: absolute; left: 88px; top: 660px; width: 1240px; height: 440px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--raised); }
+  .frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+  .caption { position: absolute; left: 88px; top: 1124px; font-size: 20px; color: var(--ink-3); }
+
+  .foot { position: absolute; left: 88px; right: 88px; bottom: 88px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { width: 220px; height: auto; display: block; }
+  .cta { font: 600 30px/1.1 var(--sans); color: var(--green); }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <p class="eyebrow">Calificaciones</p>
+    <h1 class="display">Las notas, <em class="remate">sin Excel.</em></h1>
+    <p class="lead">Los docentes cargan en la misma pantalla donde ven el curso, y el boletín sale de ahí.</p>
+  </div>
+
+  <figure class="frame">
+    <img src="../../../../brand/assets/screenshots/calificaciones.webp" alt="Planilla de calificaciones de Gragica con alumnos y notas por trimestre.">
+  </figure>
+  <p class="caption">Captura real · datos ficticios</p>
+
+  <div class="foot">
+    <img class="logo" src="../../../../brand/assets/logos/gragica-lockup-h.svg" alt="Gragica">
+    <span class="cta">Pedir una demo →</span>
+  </div>
+</body>
+</html>

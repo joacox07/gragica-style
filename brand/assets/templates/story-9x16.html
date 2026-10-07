@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Story 9:16</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=block" rel="stylesheet">
+  <!-- Plantilla de marca Gragica · brand/applications/SOCIAL.md
+       Editá SOLO el bloque #piece. Render: node scripts/brand/render.mjs brand/assets/templates/story-9x16.html -->
+  <script type="application/json" id="piece">
+  {
+    "format": "story-9x16",
+    "width": 1080,
+    "height": 1920,
+    "level": 3,
+    "structure": "A",
+    "goal": "Awareness de marca",
+    "audience": "direccion",
+    "eyebrow": "Gestión escolar · Argentina",
+    "headline": "La gestión de tu colegio, entera.",
+    "headline_break": true,
+    "remate": "entera.",
+    "lead": "Notas, asistencia, boletines y comunicación con las familias en un mismo sistema.",
+    "cta": "gragica.com",
+    "background": "night",
+    "evidence": {
+      "type": "type-only"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      /* Tokens de marca (brand/tokens/semantic.tokens.json). Único lugar con valores de color. */
+      --brand-primary: #2F6F2A;
+      --brand-primary-on-dark: #5BAE66;
+      --brand-night: #0D1C0D;
+      --brand-on-night: #CAD8CA;
+      --brand-accent: #C98E18;
+      --brand-accent-on-night: #EAB448;
+      --surface-page: #FCFDFC;
+      --surface-raised: #FFFFFF;
+      --surface-sunken: #F3F7F2;
+      --border: #E0E7DF;
+      --text-primary: #1F2023;
+      --text-secondary: #4E5156;
+      --text-muted: #61656B;
+      --on-primary: #FFFFFF;
+      --on-night-strong: #FFFFFF;
+      --rule-on-night: rgb(255 255 255 / 0.14);
+      --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --font-sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --radius-card: 14px;
+      --radius-control: 10px;
+      --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: var(--w); height: var(--h); overflow: hidden; }
+    body { font-family: var(--font-sans); color: var(--text-primary); background: var(--surface-page);
+           -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+    body.night { background: var(--brand-night); color: var(--brand-on-night); }
+    body.sunken { background: var(--surface-sunken); }
+    .eyebrow { font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--brand-primary); }
+    .night .eyebrow { color: var(--brand-primary-on-dark); }
+    .headline { font-family: var(--font-serif); font-weight: 600; letter-spacing: -0.025em; line-height: 1.04; }
+    .headline .remate { color: var(--brand-primary); }
+    .night .headline { color: var(--on-night-strong); }
+    .night .headline .remate { color: var(--brand-primary-on-dark); }
+    .lead { color: var(--text-secondary); line-height: 1.45; }
+    .night .lead { color: var(--brand-on-night); }
+    .caption { color: var(--text-muted); line-height: 1.4; }
+    .night .caption { color: var(--brand-on-night); opacity: .8; }
+    .frame { background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius-card);
+             box-shadow: var(--shadow-card); overflow: hidden; }
+    .frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+    .cta { display: inline-flex; align-items: center; font-weight: 600; background: var(--brand-primary);
+           color: var(--on-primary); border-radius: var(--radius-control); }
+
+    /* --- composición de este formato --- */
+    /* zonas seguras: 250px arriba, 340px abajo */
+    .wrap { position: absolute; left: 72px; right: 72px; top: 330px; bottom: 340px; display: flex; flex-direction: column; justify-content: center; }
+    .eyebrow { font-size: 24px; }
+    h1.headline { font-size: 132px; margin-top: 36px; }
+    .lead { font-size: 40px; margin-top: 40px; max-width: 860px; }
+    .top { position: absolute; left: 72px; top: 250px; }
+    .foot { position: absolute; left: 72px; right: 72px; bottom: 340px; display: flex; justify-content: flex-end; }
+    .logo { display: block; width: 242px; height: auto; } /* ≈ 240px */
+    .url { font-size: 34px; font-weight: 600; color: var(--on-night-strong); }
+    body:not(.night) .url { color: var(--text-primary); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow" data-field="eyebrow">Gestión escolar · Argentina</div>
+    <h1 class="headline"><span data-field="headline">La gestión de tu colegio,</span> <br data-field="headline_break"><span class="remate" data-field="remate">entera.</span></h1>
+    <p class="lead" data-field="lead">Notas, asistencia, boletines y comunicación con las familias en un mismo sistema.</p>
+  </div>
+  <div class="top"><img class="logo" data-logo src="../logos/gragica-lockup-h-white.svg" alt="Gragica"></div>
+  <div class="foot"><span class="url" data-field="cta">gragica.com</span></div>
+
+  <script>
+    // Llena los [data-field] desde el bloque #piece. Editá solo el JSON de arriba.
+    (function () {
+      var p = JSON.parse(document.getElementById("piece").textContent);
+      document.documentElement.style.setProperty("--w", p.width + "px");
+      document.documentElement.style.setProperty("--h", p.height + "px");
+      if (p.background && p.background !== "paper") document.body.classList.add(p.background);
+      document.querySelectorAll("[data-field]").forEach(function (el) {
+        var k = el.getAttribute("data-field");
+        if (k === "headline_break") {
+          if (!p.headline_break) el.remove();
+        } else if (k === "screenshot") {
+          if (p.screenshot) el.src = p.screenshot; else el.closest(".frame").remove();
+        } else if (k === "headline") {
+          var h = p.headline || "", r = p.remate || "";
+          el.textContent = r && h.slice(-r.length) === r ? h.slice(0, -r.length).trim() : h;
+        } else if (p[k] !== undefined) {
+          if (p[k] === "" || p[k] === null) el.remove(); else el.textContent = p[k];
+        }
+      });
+      var night = document.body.classList.contains("night");
+      document.querySelectorAll("img[data-logo]").forEach(function (logo) {
+        var src = logo.getAttribute("src"), white = /-white\.svg$/.test(src);
+        if (night && !white) logo.setAttribute("src", src.replace(/(-ink-word|-ink)?\.svg$/, "-white.svg"));
+        if (!night && white) logo.setAttribute("src", src.replace(/-white\.svg$/, ".svg"));
+      });
+    })();
+  </script>
+</body>
+</html>

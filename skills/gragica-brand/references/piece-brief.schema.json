@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gragica-brand/piece-brief",
+  "title": "Brief de pieza Gragica",
+  "description": "Completalo ANTES de diseñar. Va también embebido en la pieza HTML como <script type=\"application/json\" id=\"piece\">. Si un campo marcado 'askUser' no se puede deducir, se pregunta: no se inventa.",
+  "type": "object",
+  "required": [
+    "format",
+    "level",
+    "goal",
+    "audience",
+    "headline",
+    "remate",
+    "evidence",
+    "background"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "format": {
+      "enum": [
+        "ad-4x5",
+        "post-1x1",
+        "story-9x16",
+        "carousel-4x5",
+        "slide-16x9",
+        "og-1200x630",
+        "a4",
+        "email-header",
+        "reel-9x16"
+      ],
+      "description": "Clave de brand-spec.json › formats. Define lienzo, márgenes, safe zone y tamaños de tipo."
+    },
+    "width": {
+      "type": "integer",
+      "description": "Se completa desde formats[format].width."
+    },
+    "height": {
+      "type": "integer",
+      "description": "Se completa desde formats[format].height."
+    },
+    "level": {
+      "enum": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "description": "brand-spec.json › levels / levelDecision."
+    },
+    "type": {
+      "enum": [
+        "producto",
+        "problema-solucion",
+        "feature",
+        "testimonio",
+        "lanzamiento",
+        "institucional",
+        "comparacion",
+        "dato",
+        "seguridad",
+        "demo",
+        "awareness",
+        "educativo",
+        "documento",
+        "otro"
+      ],
+      "description": "Tipo de pieza (brand/applications/ADS.md)."
+    },
+    "goal": {
+      "type": "string",
+      "maxLength": 140,
+      "description": "Qué tiene que pasar después de verla. Ej.: 'que un director pida una demo'."
+    },
+    "audience": {
+      "enum": [
+        "direccion",
+        "docentes",
+        "preceptores",
+        "familias",
+        "alumnos",
+        "personal",
+        "publico-general"
+      ],
+      "description": "A quién le habla. Cambia vocabulario y nivel de detalle."
+    },
+    "eyebrow": {
+      "type": "string",
+      "maxLength": 40,
+      "description": "Opcional. ≤ 4 palabras, versalitas verdes. Ej.: 'Gestión escolar · Argentina'."
+    },
+    "headline": {
+      "type": "string",
+      "maxLength": 90,
+      "description": "Titular completo, incluido el remate. Termina en punto. ≤ maxWordsHeadline del formato. Sin '!' ni '…'."
+    },
+    "remate": {
+      "type": "string",
+      "description": "Parte final del titular que va en verde (debe ser sufijo exacto de headline). Vacío solo en nivel 1–2."
+    },
+    "lead": {
+      "type": "string",
+      "maxLength": 220,
+      "description": "Bajada opcional, 1–2 frases, ≤ 30 palabras."
+    },
+    "cta": {
+      "type": "string",
+      "maxLength": 40,
+      "description": "Opcional. Ver brand-spec.json › copy.cta.approved."
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "real-screenshot",
+            "sourced-figure",
+            "real-quote",
+            "type-only",
+            "school-real"
+          ]
+        },
+        "asset": {
+          "type": "string",
+          "description": "Ruta de la captura real o del escudo."
+        },
+        "figure": {
+          "type": "string",
+          "description": "Cifra (si sourced-figure)."
+        },
+        "source": {
+          "type": "string",
+          "description": "Fuente verificable de la cifra o permiso de la cita. askUser si falta."
+        },
+        "quote": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string",
+          "description": "Nombre, cargo y colegio reales."
+        },
+        "caption": {
+          "type": "string",
+          "description": "Pie. Para capturas: 'Captura real · datos ficticios'."
+        }
+      }
+    },
+    "background": {
+      "enum": [
+        "paper",
+        "white",
+        "sunken",
+        "night",
+        "green",
+        "school-color"
+      ],
+      "description": "Define logo (logo.byBackground) y pares de color permitidos."
+    },
+    "schoolColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$",
+      "description": "Solo co-branding: color elegido por el colegio. El lint lo acepta como color válido."
+    },
+    "school": {
+      "type": "string",
+      "description": "Solo co-branding: nombre del colegio (debe ser cliente real)."
+    },
+    "gragi": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si aparece el robot. Ver brand-spec.json › gragi.rules."
+    },
+    "series": {
+      "type": "string",
+      "description": "Si es parte de una serie (carrusel, campaña): nombre y posición, ej. 'Ciclo 2027 · 2/5'."
+    },
+    "tool": {
+      "enum": [
+        "html",
+        "canva",
+        "google-slides",
+        "chatgpt-images",
+        "higgsfield",
+        "otro"
+      ],
+      "default": "html",
+      "description": "Dónde se produce. html = render con scripts/brand/render.mjs."
+    },
+    "notes": {
+      "type": "string"
+    },
+    "structure": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "description": "brand-spec.json › structures (A afirmación, B + captura, C dato, D documento)."
+    }
+  },
+  "examples": [
+    {
+      "format": "ad-4x5",
+      "width": 1080,
+      "height": 1350,
+      "level": 3,
+      "type": "feature",
+      "goal": "que directores de colegios privados de Santa Fe pidan una demo",
+      "audience": "direccion",
+      "eyebrow": "Calificaciones",
+      "headline": "Las notas, sin Excel.",
+      "remate": "sin Excel.",
+      "lead": "Los docentes cargan en la misma pantalla donde ven el curso y el boletín sale de ahí.",
+      "cta": "Pedir una demo",
+      "evidence": {
+        "type": "real-screenshot",
+        "asset": "brand/assets/screenshots/calificaciones.webp",
+        "caption": "Captura real · datos ficticios"
+      },
+      "background": "paper",
+      "tool": "html"
+    }
+  ]
+}

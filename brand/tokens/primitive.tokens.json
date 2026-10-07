@@ -1,0 +1,1133 @@
+{
+  "$description": "Primitivos de Gragica. Valores crudos con nombre de lo que son, no de para qué sirven. Espejo verificado de packages/ui (ver scripts/brand/check-tokens.mjs). Neutros calculados con --brand-hue = 116 (sin colegio).",
+  "color": {
+    "$type": "color",
+    "green": {
+      "950": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            120,
+            35,
+            8
+          ],
+          "hex": "#0D1C0D"
+        },
+        "$description": "Verde noche. Bandas oscuras de marketing.",
+        "$extensions": {
+          "com.gragica.source": {
+            "ts": "LANDING.band"
+          }
+        }
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            118,
+            32,
+            15
+          ],
+          "hex": "#1B321A"
+        },
+        "$description": "Fondo del CTA final de la landing.",
+        "$extensions": {
+          "com.gragica.source": {
+            "ts": "LANDING.cta"
+          }
+        }
+      },
+      "800": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            116,
+            56,
+            21
+          ],
+          "hex": "#1C5418"
+        },
+        "$description": "Verde bosque profundo. Hover del primario.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-primary-hover",
+            "mode": "light"
+          }
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            116,
+            45,
+            30
+          ],
+          "hex": "#2F6F2A"
+        },
+        "$description": "VERDE GRAGICA. El color canónico de la marca.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-primary",
+            "mode": "light"
+          }
+        }
+      },
+      "400": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            128,
+            34,
+            52
+          ],
+          "hex": "#5BAE66"
+        },
+        "$description": "Verde de marca sobre fondo oscuro.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-primary",
+            "mode": "dark"
+          }
+        }
+      }
+    },
+    "paper": {
+      "000": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "hex": "#FFFFFF"
+        },
+        "$description": "Blanco. Superficie de tarjetas y papel de impresión.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-surface",
+            "mode": "light"
+          }
+        }
+      },
+      "050": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            116,
+            25,
+            99
+          ],
+          "hex": "#FCFDFC"
+        },
+        "$description": "Papel. Fondo de página (teñido con el tono de marca).",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-background",
+            "mode": "light"
+          }
+        }
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            116,
+            25,
+            96
+          ],
+          "hex": "#F3F7F2"
+        },
+        "$description": "Papel hundido. Zonas atenuadas, sidebar.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-surface-muted",
+            "mode": "light"
+          }
+        }
+      },
+      "200": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            116,
+            14,
+            89
+          ],
+          "hex": "#E0E7DF"
+        },
+        "$description": "Filete. Bordes y separadores.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-border",
+            "mode": "light"
+          }
+        }
+      }
+    },
+    "ink": {
+      "900": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            225,
+            6,
+            13
+          ],
+          "hex": "#1F2023"
+        },
+        "$description": "Tinta. Texto principal.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-text-primary",
+            "mode": "light"
+          }
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            213,
+            5,
+            32
+          ],
+          "hex": "#4E5156"
+        },
+        "$description": "Tinta secundaria.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-text-secondary",
+            "mode": "light"
+          }
+        }
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            213,
+            5,
+            40
+          ],
+          "hex": "#61656B"
+        },
+        "$description": "Tinta atenuada. Mínimo para texto chico (AA).",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-text-muted",
+            "mode": "light"
+          }
+        }
+      }
+    },
+    "night": {
+      "900": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            116,
+            6,
+            9
+          ],
+          "hex": "#161816"
+        },
+        "$description": "Página en tema oscuro.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-background",
+            "mode": "dark"
+          }
+        }
+      },
+      "800": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            116,
+            5,
+            12
+          ],
+          "hex": "#1D201D"
+        },
+        "$description": "Superficie en tema oscuro.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-surface",
+            "mode": "dark"
+          }
+        }
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            116,
+            8,
+            91
+          ],
+          "hex": "#E6EAE6"
+        },
+        "$description": "Texto principal en tema oscuro.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-text-primary",
+            "mode": "dark"
+          }
+        }
+      }
+    },
+    "gold": {
+      "500": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            40,
+            79,
+            44
+          ],
+          "hex": "#C98E18"
+        },
+        "$description": "Dorado. Distinción: lo destacado, lo logrado.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-gold",
+            "mode": "light"
+          }
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            40,
+            79,
+            31
+          ],
+          "hex": "#8D6411"
+        },
+        "$description": "Dorado como texto sobre fondo claro.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-gold-on-muted",
+            "mode": "light"
+          }
+        }
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            40,
+            70,
+            92
+          ],
+          "hex": "#F9EFDC"
+        },
+        "$description": "Dorado tenue de fondo.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-gold-muted",
+            "mode": "light"
+          }
+        }
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            40,
+            79,
+            60
+          ],
+          "hex": "#EAB448"
+        },
+        "$description": "Dorado sobre verde noche.",
+        "$extensions": {
+          "com.gragica.source": {
+            "ts": "LANDING.ctaGold"
+          }
+        }
+      }
+    },
+    "emerald": {
+      "600": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            142,
+            64,
+            38
+          ],
+          "hex": "#239F50"
+        },
+        "$description": "Éxito, aprobado, presente.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-success",
+            "mode": "light"
+          }
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            142,
+            64,
+            30
+          ],
+          "hex": "#1C7D3F"
+        },
+        "$description": "Éxito como texto.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-success-on-muted",
+            "mode": "light"
+          }
+        }
+      },
+      "050": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            142,
+            50,
+            94
+          ],
+          "hex": "#E8F7EE"
+        },
+        "$description": "Éxito de fondo.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-success-muted",
+            "mode": "light"
+          }
+        }
+      }
+    },
+    "amber": {
+      "500": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            35,
+            92,
+            48
+          ],
+          "hex": "#EB8D0A"
+        },
+        "$description": "Advertencia, en riesgo.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-warning",
+            "mode": "light"
+          }
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            35,
+            92,
+            32
+          ],
+          "hex": "#9D5E07"
+        },
+        "$description": "Advertencia como texto.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-warning-on-muted",
+            "mode": "light"
+          }
+        }
+      },
+      "050": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            35,
+            90,
+            93
+          ],
+          "hex": "#FDF0DD"
+        },
+        "$description": "Advertencia de fondo.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-warning-muted",
+            "mode": "light"
+          }
+        }
+      }
+    },
+    "red": {
+      "500": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            4,
+            74,
+            50
+          ],
+          "hex": "#DE2E21"
+        },
+        "$description": "Error, desaprobado, ausente, acción destructiva.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-error",
+            "mode": "light"
+          }
+        }
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            4,
+            74,
+            46
+          ],
+          "hex": "#CC2A1E"
+        },
+        "$description": "Error como texto.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-error-on-muted",
+            "mode": "light"
+          }
+        }
+      },
+      "050": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            4,
+            70,
+            95
+          ],
+          "hex": "#FBEBE9"
+        },
+        "$description": "Error de fondo.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-error-muted",
+            "mode": "light"
+          }
+        }
+      }
+    },
+    "teal": {
+      "600": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            185,
+            64,
+            36
+          ],
+          "hex": "#218D97"
+        },
+        "$description": "Información (no es azul a propósito).",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-info",
+            "mode": "light"
+          }
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            185,
+            64,
+            31
+          ],
+          "hex": "#1C7982"
+        },
+        "$description": "Información como texto.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-info-on-muted",
+            "mode": "light"
+          }
+        }
+      },
+      "050": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            185,
+            50,
+            93
+          ],
+          "hex": "#E4F5F6"
+        },
+        "$description": "Información de fondo.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-info-muted",
+            "mode": "light"
+          }
+        }
+      }
+    },
+    "graphite": {
+      "800": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            210,
+            18,
+            22
+          ],
+          "hex": "#2E3842"
+        },
+        "$description": "Grafito. Inicio del degradado de IA.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-ai-from",
+            "mode": "light"
+          }
+        }
+      }
+    },
+    "aiteal": {
+      "600": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            162,
+            42,
+            32
+          ],
+          "hex": "#2F745F"
+        },
+        "$description": "Verde metálico. Fin del degradado de IA.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-ai-to",
+            "mode": "light"
+          }
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            162,
+            48,
+            28
+          ],
+          "hex": "#256A55"
+        },
+        "$description": "Texto de IA.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-ai-text",
+            "mode": "light"
+          }
+        }
+      }
+    },
+    "gragi": {
+      "500": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            142,
+            58,
+            38
+          ],
+          "hex": "#299952"
+        },
+        "$description": "Esmeralda de Gragi (UI del asistente).",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-gragi-from",
+            "mode": "light"
+          }
+        }
+      },
+      "800": {
+        "$value": {
+          "colorSpace": "hsl",
+          "components": [
+            122,
+            62,
+            22
+          ],
+          "hex": "#155B18"
+        },
+        "$description": "Bosque de Gragi (UI del asistente).",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--color-gragi-to",
+            "mode": "light"
+          }
+        }
+      },
+      "neon": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2118,
+            0.7608,
+            0.3176
+          ],
+          "hex": "#36C251"
+        },
+        "$description": "Verde neón del robot Gragi (medido en images/gragi/gragi.webp). EXCEPCIÓN: solo existe dentro del personaje; nunca como color de texto, fondo o UI.",
+        "$extensions": {
+          "com.gragica.source": {
+            "asset": "brand/assets/gragi/gragi.webp"
+          }
+        }
+      },
+      "body": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0314,
+            0.6039,
+            0.2
+          ],
+          "hex": "#089A33"
+        },
+        "$description": "Verde del cuerpo del robot (medido). Misma excepción.",
+        "$extensions": {
+          "com.gragica.source": {
+            "asset": "brand/assets/gragi/gragi.webp"
+          }
+        }
+      }
+    },
+    "chart": {
+      "light": {
+        "1": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1843,
+              0.4588,
+              0.1647
+            ],
+            "hex": "#2F752A"
+          },
+          "$description": "Serie 1, verde bosque.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_LIGHT.0"
+            }
+          }
+        },
+        "2": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0314,
+              0.5686,
+              0.6118
+            ],
+            "hex": "#08919C"
+          },
+          "$description": "Serie 2, teal.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_LIGHT.1"
+            }
+          }
+        },
+        "3": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7882,
+              0.3804,
+              0.2039
+            ],
+            "hex": "#C96134"
+          },
+          "$description": "Serie 3, terracota.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_LIGHT.2"
+            }
+          }
+        },
+        "4": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5216,
+              0.3529,
+              0.6863
+            ],
+            "hex": "#855AAF"
+          },
+          "$description": "Serie 4, ciruela.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_LIGHT.3"
+            }
+          }
+        },
+        "5": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7647,
+              0.5373,
+              0.0549
+            ],
+            "hex": "#C3890E"
+          },
+          "$description": "Serie 5, dorado.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_LIGHT.4"
+            }
+          }
+        }
+      },
+      "dark": {
+        "1": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2314,
+              0.6667,
+              0.2039
+            ],
+            "hex": "#3BAA34"
+          },
+          "$description": "Serie 1 en oscuro.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_DARK.0"
+            }
+          }
+        },
+        "2": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0745,
+              0.6353,
+              0.6824
+            ],
+            "hex": "#13A2AE"
+          },
+          "$description": "Serie 2 en oscuro.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_DARK.1"
+            }
+          }
+        },
+        "3": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8235,
+              0.4431,
+              0.2784
+            ],
+            "hex": "#D27147"
+          },
+          "$description": "Serie 3 en oscuro.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_DARK.2"
+            }
+          }
+        },
+        "4": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6157,
+              0.4471,
+              0.7882
+            ],
+            "hex": "#9D72C9"
+          },
+          "$description": "Serie 4 en oscuro.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_DARK.3"
+            }
+          }
+        },
+        "5": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7333,
+              0.5176,
+              0.0
+            ],
+            "hex": "#BB8400"
+          },
+          "$description": "Serie 5 en oscuro.",
+          "$extensions": {
+            "com.gragica.source": {
+              "ts": "SERIES_DARK.4"
+            }
+          }
+        }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "serif": {
+        "$value": [
+          "Source Serif 4",
+          "Georgia",
+          "Times New Roman",
+          "serif"
+        ],
+        "$description": "Voz editorial: afirmaciones, titulares de marketing, títulos de documentos. Nunca en controles de UI."
+      },
+      "sans": {
+        "$value": [
+          "Source Sans 3",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif"
+        ],
+        "$description": "Todo lo demás: producto, cuerpo, rótulos, datos."
+      },
+      "mono": {
+        "$value": [
+          "ui-monospace",
+          "SF Mono",
+          "Menlo",
+          "monospace"
+        ],
+        "$description": "Solo para código o IDs técnicos. No es tipografía de marca."
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400,
+        "$description": "Texto corrido."
+      },
+      "medium": {
+        "$value": 500,
+        "$description": "Rótulos, eyebrow."
+      },
+      "semibold": {
+        "$value": 600,
+        "$description": "Titulares serif, títulos de tarjeta."
+      },
+      "bold": {
+        "$value": 700,
+        "$description": "Cifras protagonistas en producto."
+      }
+    }
+  },
+  "dimension": {
+    "$type": "dimension",
+    "radius": {
+      "sm": {
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Chips.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--radius-sm"
+          }
+        }
+      },
+      "md": {
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$description": "Controles y botones.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--radius-md"
+          }
+        }
+      },
+      "lg": {
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        },
+        "$description": "Tarjetas y marcos de captura.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--radius-lg"
+          }
+        }
+      },
+      "xl": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "Hojas y diálogos.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--radius-xl"
+          }
+        }
+      }
+    },
+    "space": {
+      "1": {
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Espacio 4px.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--space-1"
+          }
+        }
+      },
+      "2": {
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Espacio 8px.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--space-2"
+          }
+        }
+      },
+      "3": {
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Espacio 12px.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--space-3"
+          }
+        }
+      },
+      "4": {
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$description": "Espacio 16px.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--space-4"
+          }
+        }
+      },
+      "6": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$description": "Espacio 24px.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--space-6"
+          }
+        }
+      },
+      "8": {
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$description": "Espacio 32px.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--space-8"
+          }
+        }
+      },
+      "12": {
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        },
+        "$description": "Espacio 48px.",
+        "$extensions": {
+          "com.gragica.source": {
+            "css": "--space-12"
+          }
+        }
+      }
+    }
+  },
+  "duration": {
+    "$type": "duration",
+    "fast": {
+      "$value": {
+        "value": 120,
+        "unit": "ms"
+      },
+      "$description": "Hover, toggles.",
+      "$extensions": {
+        "com.gragica.source": {
+          "css": "--dur-fast"
+        }
+      }
+    },
+    "base": {
+      "$value": {
+        "value": 180,
+        "unit": "ms"
+      },
+      "$description": "Transición por defecto.",
+      "$extensions": {
+        "com.gragica.source": {
+          "css": "--dur-base"
+        }
+      }
+    },
+    "slow": {
+      "$value": {
+        "value": 260,
+        "unit": "ms"
+      },
+      "$description": "Overlays, crossfades.",
+      "$extensions": {
+        "com.gragica.source": {
+          "css": "--dur-slow"
+        }
+      }
+    }
+  },
+  "cubicBezier": {
+    "$type": "cubicBezier",
+    "standard": {
+      "$value": [
+        0.2,
+        0.8,
+        0.2,
+        1
+      ],
+      "$description": "La única curva de Gragica: arranca decidida y frena suave.",
+      "$extensions": {
+        "com.gragica.source": {
+          "css": "--ease"
+        }
+      }
+    }
+  }
+}
