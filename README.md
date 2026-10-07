@@ -28,6 +28,7 @@ Para trabajar sobre el sistema en sí, cloná el repo y abrí Claude Code adentr
 
 ## Usarlo con otras IAs
 
+- **Proyecto de ChatGPT (imágenes y copy):** instrucciones y archivos en [`brand/ai/CHATGPT_PROJECT.md`](brand/ai/CHATGPT_PROJECT.md).
 - **ChatGPT / Codex / Gemini:** pegá [`brand/ai/AGENT_BRIEF.md`](brand/ai/AGENT_BRIEF.md) antes del pedido. Si pueden
   leer el repo, pediles que lean `BRAND.md`.
 - **claude.ai:** `node skills/gragica-brand/scripts/build-bundle.mjs` arma un zip de la skill para subir.

@@ -8,7 +8,7 @@ Sistema de marca de Gragica. Empezá por [`../BRAND.md`](../BRAND.md).
 | [`verbal/`](verbal/) | [VOICE_AND_TONE](verbal/VOICE_AND_TONE.md) · [COPY_GUIDELINES](verbal/COPY_GUIDELINES.md) · [VOCABULARY](verbal/VOCABULARY.md) |
 | [`visual/`](visual/) | [LOGO](visual/LOGO.md) · [COLOR](visual/COLOR.md) · [TYPOGRAPHY](visual/TYPOGRAPHY.md) · [LAYOUT](visual/LAYOUT.md) · [DISTINCTIVE_ASSETS](visual/DISTINCTIVE_ASSETS.md) · [ICONOGRAPHY](visual/ICONOGRAPHY.md) · [PHOTOGRAPHY](visual/PHOTOGRAPHY.md) · [ILLUSTRATION](visual/ILLUSTRATION.md) · [MOTION](visual/MOTION.md) · [DATA_VISUALIZATION](visual/DATA_VISUALIZATION.md) |
 | [`applications/`](applications/) | [PRODUCT](applications/PRODUCT.md) · [WEB](applications/WEB.md) · [SOCIAL](applications/SOCIAL.md) · [ADS](applications/ADS.md) · [PRESENTATIONS](applications/PRESENTATIONS.md) · [PRINT](applications/PRINT.md) · [VIDEO](applications/VIDEO.md) · [MERCH](applications/MERCH.md) · [COBRANDING](applications/COBRANDING.md) · [CANVA_AND_SLIDES](applications/CANVA_AND_SLIDES.md) |
-| [`ai/`](ai/) | [GENERATIVE_AI](ai/GENERATIVE_AI.md) · [IMAGE_PROMPTS](ai/IMAGE_PROMPTS.md) · [VIDEO_PROMPTS](ai/VIDEO_PROMPTS.md) · [AGENT_BRIEF](ai/AGENT_BRIEF.md) |
+| [`ai/`](ai/) | [GENERATIVE_AI](ai/GENERATIVE_AI.md) · [IMAGE_PROMPTS](ai/IMAGE_PROMPTS.md) · [VIDEO_PROMPTS](ai/VIDEO_PROMPTS.md) · [AGENT_BRIEF](ai/AGENT_BRIEF.md) · [CHATGPT_PROJECT](ai/CHATGPT_PROJECT.md) |
 | [`tokens/`](tokens/README.md) | Tokens DTCG, espejo verificado de `packages/ui` |
 | `assets/logos/` | SVG maestros + `png/` exportados |
 | `assets/templates/` | Plantillas HTML (4:5, 1:1, 9:16, 16:9, A4, OG) |
